@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+.question {
+	font-family: 'PT Sans', sans-serif;
+	font-size: 18px;
+}
+
+.row {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.heading {
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+.intro {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+.spacer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
