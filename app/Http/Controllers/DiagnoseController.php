@@ -53,10 +53,24 @@ class DiagnoseController extends Controller
         $inputs = $request->all();
         array_pull($inputs, '_token');
         $points = $inserter->phq9Submit($request->session()->get('gender'), $request->session()->get('group'), $inputs);
+        $data['points'] = $points;
         if($points >= 0 && $points <= 4)
         {
-            return view('');
+            $data['message'] = "No signs of depression detected. What you're experiencing right now is normal. No further action recommended. You'll be alright";
+            return view('result/phq9', $data);
+        }
+        else if($points >=5 && $points <= 9)
+        {
+            return view('diagnose/further_phq9');
         }
         echo "PHQ-9 Score ".$points;
+    }
+
+    public function phq9_further(Request $request, Diagnose $diagnose)
+    {
+        $inputs = $request->all();
+        array_pull($inputs, '_token');
+        $data['message'] = $diagnose->further_phq9($inputs);
+        return view('result/further_phq9', $data);
     }
 }

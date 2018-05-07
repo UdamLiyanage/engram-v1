@@ -25,6 +25,8 @@ Route::post('/phq2-submit', 'DiagnoseController@phq2')->name('phq2_submit');
 Route::get('/phq9', 'DiagnoseController@phq9Questions')->name('phq9_get');
 Route::post('/phq9-submit', 'DiagnoseController@phq9')->name('phq9_submit');
 
+Route::post('/phq_further', 'DiagnoseController@phq9_further')->name('phq9_further');
+
 Route::get('/test', 'SurveyController@test');
 
 /*Route::get('/', function () {

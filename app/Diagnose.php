@@ -65,6 +65,14 @@ class Diagnose
         return $points;
     }
 
+    public function further_phq9($inputs)
+    {
+        if($inputs['q1'] == 1 || $inputs['q1'] == 2) $return = "Increase engagement with your environment, do safe aerobic exercises. Also, increase pleasant activities and other positive interactions with your environment. Nothing much. We'll get back to you next month";
+        if($inputs['q1'] == 3 && $inputs['q2'] == 1) $return = "You're in partial remission. You'll be okay in no time!";
+        if($inputs['q1'] == 3 && $inputs['q2'] == 2) $return = "Antidepressant treatment is recommended. Consult a doctor";
+        return $return;
+    }
+
     private function calculatePhqScore($answers)
     {
         $points = 0;

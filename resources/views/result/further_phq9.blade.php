@@ -70,7 +70,7 @@
     <div class="row">
         <div class="col-lg-12 text-center">
             <h1 class="mt-5">Patient Health Questionnaire 9 - Diagnosis</h1>
-            <p class="lead">You have a PHQ-9 score of {{$points}} points. {{$message}}</p>
+            <p class="lead">{{$message}}</p>
         </div>
     </div>
     <div class="row">

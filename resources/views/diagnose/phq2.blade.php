@@ -42,24 +42,24 @@
                     <div class="col-md-4">
                         <p class="question">{{$question['id']}}.  {{$question['question']}}</p>
                     </div>
-                    <div class="col-md-2">  
-                        <div class="form-check" align="center">
-                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="na" name="{{$question['id']}}" aria-label="...">
+                    <div class="col-md-2" align="center">
+                        <div class="radio">
+                            <label><input type="radio" name="{{$question['id']}}" value="na"></label>
                         </div>
                     </div>
                     <div class="col-md-2" align="center">
-                        <div class="form-check">
-                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="sd" name="{{$question['id']}}" aria-label="...">
+                        <div class="radio">
+                            <label><input type="radio" name="{{$question['id']}}" value="sd"></label>
                         </div>
                     </div>
                     <div class="col-md-2" align="center">
-                        <div class="form-check">
-                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="hd" name="{{$question['id']}}" aria-label="...">
+                        <div class="radio">
+                            <label><input type="radio" name="{{$question['id']}}" value="hd"></label>
                         </div>
                     </div>
                     <div class="col-md-2" align="center">
-                        <div class="form-check">
-                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="ne" name="{{$question['id']}}" aria-label="...">
+                        <div class="radio">
+                            <label><input type="radio" name="{{$question['id']}}" value="ne"></label>
                         </div>
                     </div>
                 </div>
