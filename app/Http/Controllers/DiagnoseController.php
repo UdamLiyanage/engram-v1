@@ -25,14 +25,20 @@ class DiagnoseController extends Controller
         array_pull($inputs, '_token');
         $points = $inserter->phq2Submit($request->session()->get('gender'), $request->session()->get('group'), $inputs);
         if($points > 3)
+        {
             return redirect()->route('phq9_get');
-        else 
-            return redirect()->route('no-depression');
+        }
+        else
+        {
+            $data['message'] = "No signs of depression detected. All good.";
+            $data['points'] = $points;
+            return view('result/phq2', $data);
+        }
     }
 
     public function noDepression()
     {
-        return view('diagnose/no-depression');
+        return view('result/phq2');
     }
 
     public function phq9Questions(Phq9 $questions)
@@ -47,6 +53,10 @@ class DiagnoseController extends Controller
         $inputs = $request->all();
         array_pull($inputs, '_token');
         $points = $inserter->phq9Submit($request->session()->get('gender'), $request->session()->get('group'), $inputs);
+        if($points >= 0 && $points <= 4)
+        {
+            return view('');
+        }
         echo "PHQ-9 Score ".$points;
     }
 }
