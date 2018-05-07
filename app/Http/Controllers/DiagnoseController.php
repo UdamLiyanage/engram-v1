@@ -57,13 +57,24 @@ class DiagnoseController extends Controller
         if($points >= 0 && $points <= 4)
         {
             $data['message'] = "No signs of depression detected. What you're experiencing right now is normal. No further action recommended. You'll be alright";
-            return view('result/phq9', $data);
         }
         else if($points >=5 && $points <= 9)
         {
             return view('diagnose/further_phq9');
         }
-        echo "PHQ-9 Score ".$points;
+        else if($points >=10 && $points<=14)
+        {
+            $data['message'] = "Mild depression. You can try to engage more with your environment and socialise a little with close friends. Distance yourself from negative people. Try doing physical activities you love doing. We will get back to you next week";
+        }
+        else if($points >= 15 && $points <= 19)
+        {
+            $data['message'] = "Moderate depression. Stop/reduce the daily chores that stress you out. Distance yourself from negativity and stress. A visit to the doctor recommended. We will get back to you next week.";
+        }
+        else
+        {
+            $data['message'] = "Use of antidepressant medications and psychotherapy recommended. Consult a doctor immediately.";
+        }
+        return view('result/phq9', $data);
     }
 
     public function phq9_further(Request $request, Diagnose $diagnose)
